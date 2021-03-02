@@ -15,10 +15,12 @@
     <a href="/">Home Page</a>
     <div class="login-container">
       <h1>Login</h1>
-      <form method="POST" action="/login">
+      <form method="POST" action="/register">
+        <p>First Name: <input type="fName" placeholder="Enter first name" name="fName" required/></p>
+        <p>Last Name: <input type="lName" placeholder="Enter last name" name="lName" required/></p>
         <p>Email Address: <input type="email" placeholder="Enter email" name="email" required/></p>
         <p>Password: <input type="password" placeholder="Password" name="password" required/></p>
-        <button type="submit">Login</button>
+        <button type="submit">Register</button>
       </form>
     </div>
   </body>

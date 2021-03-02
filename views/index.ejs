@@ -12,6 +12,17 @@
   </head>
 
   <body>
-    <h1>Hello World!</h1>
+    <% if (user) { %>
+      <h1>Hey there, <%= user %></h1>
+      <form action="/logout" method="POST">
+        <button class="logout-button" type="submit">Logout</button>
+      </form>
+    <% } else { %>
+      <a href="/">Home Page</a>
+      <h1>Login or Register to continue..</h1>
+      <a href="/login">Login</a>
+      <br>
+      <a href="/register">Register</a>
+    <% } %>
   </body>
 </html>

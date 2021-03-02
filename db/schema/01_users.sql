@@ -1,6 +1,5 @@
 -- Drop and recreate all tables
 DROP TABLE IF EXISTS users CASCADE;
-DROP TABLE IF EXISTS widgets CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,

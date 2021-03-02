@@ -40,19 +40,18 @@ app.use(express.static("public"));
 
 // Separated Routes for each Resource
 const usersRoutes = require("./routes/users");
+const indexRoutes = require("./routes/index");
+const registerRoutes = require("./routes/register");
 const loginRoutes = require("./routes/login");
+const logoutRoutes = require("./routes/logout");
 
 // Mount all resource routes
 app.use("/api/users", usersRoutes(db));
+app.use("/", indexRoutes(db));
+app.use("/register", registerRoutes(db));
 app.use("/login", loginRoutes(db));
-// Note: mount other resources here, using the same pattern above
-
-
-// Home page
-app.get("/", (req, res) => {
-  res.render("index");
-});
+app.use("/logout", logoutRoutes(db));
 
 app.listen(PORT, () => {
-  console.log(`Example app listening on port ${PORT}`);
+  console.log(`App listening on port ${PORT}`);
 });
