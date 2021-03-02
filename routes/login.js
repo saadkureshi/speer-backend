@@ -26,17 +26,17 @@ module.exports = (db) => {
             req.session["userEmail"] = userEmail;
             res.redirect("/");
           } else {
-            res.redirect("/login");
+            res.send("The password you have entered is incorrect.");
           }
         } else {
-          res.redirect("/login");
+          res.send("There is no account associated with this email address.")
         }
         return response.rows[0] ? response.rows[0] : null;
       })
       .catch(e => {
-        console.log(e);
         res.send(e);
       });
   });
+
   return router;
 };
